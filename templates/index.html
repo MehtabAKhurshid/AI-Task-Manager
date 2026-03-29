@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Flask Task Manager</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 8px 12px;
+      margin-left: 8px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Task Manager</h1>
+
+  <form method="post">
+    <input type="text" name="task" placeholder="Enter a new task" required>
+    <button type="submit">Add Task</button>
+  </form>
+
+  <h2>Tasks</h2>
+  <ul>
+    {% for task in tasks %}
+      <li>{{ task }}</li>
+    {% else %}
+      <li>No tasks yet.</li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
